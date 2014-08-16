@@ -30,6 +30,7 @@ void sqltest::Validarcampos()
 {
     if(ui->lineEdit_2->text().trimmed().isEmpty())
         QMessageBox::critical(this, "Deus Bosta", "Digite o nome do BD:")
+        ui->lineEdit_2->setFocus();
 void sqltest::connect()
 {
 
