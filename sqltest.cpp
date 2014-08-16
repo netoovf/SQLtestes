@@ -19,6 +19,8 @@ sqltest::sqltest(QWidget *parent):
     connect (ui->descbutt, SIGNAL(clicked()),this, SLOT(desconectar()));
     connect (ui->Exebutt, SIGNAL(clicked()),this, SLOT(exeSqL()));
             ui->lineEdit_2->setFocus();
+            txt_query = new QSqlQueryModel;
+
 }
 sqltest::~sqltest()
 {
