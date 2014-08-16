@@ -43,5 +43,5 @@ void sqltest::habilitarQuery(bool ativo)
     ui->Exebutt->setEnabled(ativo);
     ui->plainTextEdit->setEnabled(ativo);
 
-
+    ui->plainTextEdit->setDesabled(ativo);
 }
