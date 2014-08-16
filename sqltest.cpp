@@ -16,3 +16,24 @@ sqltest::sqltest(QWidget *parent):
     this->setWindowTitle("SQL TESTE");
     habilitarQuer(false);
 }
+sqltest::~sqltest()
+{
+    delete ui;
+}
+
+void sqltest::connect()
+{
+
+}
+void sqltest::desconnect()
+{
+
+}
+void sqltest::exeSQL()
+{
+
+}
+void sqltest::habilitarQuery(bool ativo)
+{
+
+}
