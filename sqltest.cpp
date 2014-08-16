@@ -14,7 +14,7 @@ sqltest::sqltest(QWidget *parent):
 {
     ui->setupUi(this);
     this->setWindowTitle("SQL TESTE");
-    habilitarQuer(false);
+    habilitarQuery(false);
 }
 sqltest::~sqltest()
 {
