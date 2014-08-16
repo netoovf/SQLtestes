@@ -22,6 +22,7 @@ public:
 
 private:
     Ui::sqltest *ui;
+    QSqlQueryModel *txt_query;
     void habilitarQuery(bool ativo);
     void valoresIniciais();
 };
