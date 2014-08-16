@@ -23,6 +23,7 @@ public:
 private:
     Ui::sqltest *ui;
     void habilitarQuery(bool ativo);
+    void valoresIniciais();
 };
 
 #endif // SQLTEST_H
