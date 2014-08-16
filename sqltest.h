@@ -16,3 +16,13 @@ class sqltest : public QDialog
 public slots:
     void connect();
     void desconnect();
+public:
+    explicit sqltest(QWidget *parent = 0);
+    ~sqltest();
+
+private:
+    Ui::sqltest *ui;
+    void habilitarQuery(bool ativo);
+};
+
+#endif // SQLTEST_H
