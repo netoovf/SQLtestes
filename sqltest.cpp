@@ -110,7 +110,7 @@ void tutorialSQLITE::enviarQuery()
         }
 
         QMessageBox::information(this, "SOQH SQL",
-                                 "Instrução SQL executada com sucesso");
+                                 "Instrução SQL executada.");
 
     }
     else
