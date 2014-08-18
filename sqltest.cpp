@@ -31,11 +31,38 @@ void sqltest::Validarcampos()
     if(ui->lineEdit_2->text().trimmed().isEmpty())
         QMessageBox::critical(this, "Deus Bosta", "Digite o nome do BD:")
         ui->lineEdit_2->setFocus();
-void sqltest::connect()
+void sqltest::conectar()
 {
+QSqlDatabase db = QSqlDatabase::addDatabase("SQLLITE");
+    db.setDatabaseName(ui->edt_schema->text().trimmed());
 
+    if (!db.open())
+    {
+        QMessageBox::critical(this, "Falha",
+                              "Falha na conexão com o BD [" + ui->edt_schema->text() + "]\n" + db.lastError().text(),
+                              QMessageBox::Cancel);
+        return;
+    }
+
+    QSqlQuery qry;
+    qry.prepare("SELECT datetime('now')");
+    if (!qry.exec()){
+        QString erro = qry.lastError().text();
+        QMessageBox::critical(this, "Falha",
+                              "Falha ao preparar consulta do BD" + erro + "\n",
+                              QMessageBox::Cancel);
+    }
+    else if (qry.next())
+        QMessageBox::information(this, "Banco Tutorial",
+                                 "Conexão realizada com sucesso com o Banco ["
+                                 + ui->edt_schema->text() + "]\n[" + qry.value(0).toDateTime().toString() + "]" ,
+                                 QMessageBox::Ok);
+
+    habilitar_query(true);
+    ui->txt_sql->setFocus();
 }
-void sqltest::desconnect()
+}
+void sqltest::desconectar()
 {
 
 }
