@@ -64,7 +64,11 @@ QSqlDatabase db = QSqlDatabase::addDatabase("SQLLITE");
 }
 void sqltest::desconectar()
 {
+QSqlDatabase db = QSqlDatabase::database();
+    db.close();
 
+    habilitar_query(false);
+    ui->edt_schema->setFocus();
 }
 void sqltest::exeSQL()
 {
